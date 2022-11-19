@@ -15,7 +15,7 @@ body {
 	width: 100vw;
 	background-color: #ECEFF4;
 	display: flex;
-	flex-wrap: wrap;
+	
 	overflow: auto;
 	flex-direction: column;
 	
@@ -44,6 +44,7 @@ body {
 	display: flex;
 	flex: 1;
 	align-items: stretch;
+	overflow: hidden;
 }
 
 #contentLeft, #contentRight{
@@ -53,13 +54,18 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
+
 }
 
 #cantoBox, #bibleBox {
-	width: 66%;
-	height: 66%;
-	border: 1px solid green;
+	width: 75%;
+	height: 75%;
+	border: 5px solid #D8DEE9;
 	font-size: 16pt;
+	overflow-y: scroll;
+	padding: 5px;
+	background-color: #E5E9F0;
 }
 
 #contentLeft {
@@ -80,4 +86,24 @@ body {
 	padding-left: 10px;
 	padding-top: 20px;
 	line-height: 1.5;
+}
+#cantoBox div {
+	
+}
+
+#cantoBox div:hover {
+	background-color: #D8DEE9;
+}
+
+#cantoBox::-webkit-scrollbar, #bibleBox::-webkit-scrollbar {
+	display: none;
+}
+.paragraphBreak {
+	height: 10px;
+}
+.reference {
+	color: #5E81AC;
+}
+.reference:hover {
+	cursor: pointer;
 }
