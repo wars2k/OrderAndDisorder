@@ -43,7 +43,7 @@ body {
 #mainContent1 {
 	display: flex;
 	flex: 1;
-	align-items: stretch;
+	
 	overflow: hidden;
 }
 
@@ -53,8 +53,9 @@ body {
 	
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: top;
 	overflow: hidden;
+	flex-wrap: wrap;
 
 }
 
@@ -106,4 +107,21 @@ body {
 }
 .reference:hover {
 	cursor: pointer;
+}
+
+#titleLeft, #titleRight {
+	padding-top: ;
+	width: 75%;
+	border:  ;
+	height: 20px;
+	font-size: 16pt;
+	border: 1px solid red;
+}
+.spacer {
+	height: 30px;
+	border: ;
+	width: 75%;
+}
+.exactReference {
+	color: #5E81AC;
 }
