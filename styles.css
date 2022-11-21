@@ -30,7 +30,8 @@ body {
 }
 
 #sidebar {
-	width: 200px;
+	width: 200px !important;
+
 	background-color: #E5E9F0;
 	border-right: 3px solid #D8DEE9;
 }
@@ -41,6 +42,7 @@ body {
 }
 
 #mainContent1 {
+	width: 100%;
 	display: flex;
 	flex: 1;
 	
@@ -67,6 +69,7 @@ body {
 	overflow-y: scroll;
 	padding: 5px;
 	background-color: #E5E9F0;
+
 }
 
 #contentLeft {
@@ -115,13 +118,16 @@ body {
 	border:  ;
 	height: 20px;
 	font-size: 16pt;
-	border: 1px solid red;
+	border: ;
 }
 .spacer {
 	height: 30px;
 	border: ;
-	width: 75%;
+	width: 100%;
 }
 .exactReference {
 	color: #5E81AC;
+}
+.permanentHighlight {
+	background-color: #D8DEE9;
 }

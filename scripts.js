@@ -1,5 +1,11 @@
 
 function getVerse(book,chapter,verse) {
+	var highlightClass = document.getElementsByClassName("permanentHighlight");
+	while (highlightClass.length)
+		highlightClass[0].classList.remove("permanentHighlight");
+	highlight = event.target
+	highlight.classList.add("permanentHighlight");
+	console.log(event.target);
 	test = verse;
     fetch('https://bible-api.com/' + book + '+' + chapter + '?translation=kjv')
     .then(function(resp) { return resp.json() }) // Convert data to json
