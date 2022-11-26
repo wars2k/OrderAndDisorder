@@ -17,40 +17,76 @@
 		</select>
 		<select name="referenceSelection" id="referenceSelection">
 			<option value="verse" selected>Verse only</option>
-			<option value="chapter">Whole chapter</option>
-			<option value="verse+4">Verse in Context</option>
+			<option value="chapter">Verse and Chapter</option>
+			<!--<option value="verse+4">Verse in Context</option>-->
 		</select>
 		<select name="translationSelection" id="translationSelection">
 			<option value="kjv" selected>King James Version</option>
 			<option value="bbe">Bible in Basic English</option>
 			<option value="web">World English Bible</option>
-			<option value="oeb">Open English Bible</option>
+			<option value="oeb-us">Open English Bible</option>
+		</select>
+		<select name="lineNumbers" id="lineNumbers" onChange="changeLineNumbers()">
+			<option value="true" selected>Line Numbers</option>
+			<option value ="false">Hide Line Numbers</option>
 		</select>
 	</div>
 
 	<div id="mainContent">
 		<div id="cantoPage">
 			<div id="cantoPageContent">
-				<div class="reference" onclick="getVerse('genesis','1','31')">Good were all natures as God made them all,</div>
-				<div class="reference" onclick="getVerse('romans','9','22')">Good was his will, permitting some to fall:</div>
-				<div class="reference" onclick="getVerse('romans','11','')">That th’rest, renouncing their frail strength, might stand</div>
-				<div class="reference" onclick="getVerse('romans','3','6')">Humble and firm in his supporting hand;</div>
-				<div class="reference" onclick="getVerse('genesis','18','25')">His wisdom and omnipotence might own</div>
-				<div class="reference" onclick="getVerse('romans','11','33')">When his foes’ power and craft is overthrown;</div>
-				<div class="reference" onclick="getVerse('1corinthians','10','12')">Seeing his hate of sin, might thence confess</div>
-				<div>His pure innate and perfect holiness,</div>
-				<div class="reference" onclick="getVerse('romans','16','20')">And that the glory of his justice might</div>
-				<div class="reference" onclick="getVerse('psalms','2','')">In the bold rebels’ torturing flames seem bright; 10</div>
-				<div class="reference" onclick="getVerse('joseph','24','19')">That th’ever-blessed Redeemer might take place</div>
-				<div>To illustrate! his rich mercy and free grace</div>
-				<div class="reference" onclick="getVerse('psalms','5','5')">Whereby he fallen sinners doth restore</div>
-				<div>To fuller bliss than they enjoyed before;</div>
-				<div class="reference" onclick="getVerse('1peter','1','')">That virtue might in its clear brightness shine,</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('genesis','1','31')">Good were all natures as God made them all,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('romans','9','22')">Good was his will, permitting some to fall:</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('romans','11','')">That th’rest, renouncing their frail strength, might stand</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('romans','3','6')">Humble and firm in his supporting hand;</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('genesis','18','25')">His wisdom and omnipotence might own</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('romans','11','33')">When his foes’ power and craft is overthrown;</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('1corinthians','10','12')">Seeing his hate of sin, might thence confess</div>
+				</div>
+				<div class="lineWrapper">					
+					<div>His pure innate and perfect holiness,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('romans','16','20')">And 
+					that the glory of his justice might</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('psalms','2','')">In the bold rebels’ torturing flames seem bright;</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('joseph','24','19')">That th’ever-blessed Redeemer might take place</div>
+				</div>
+				<div class="lineWrapper">
+					<div>To illustrate! his rich mercy and free grace</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('psalms','5','5')">Whereby he fallen sinners doth restore</div>
+				</div>
+				<div class="lineWrapper">
+					<div>To fuller bliss than they enjoyed before;</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference" onclick="getVerse('1peter','1','')">That virtue might in its clear brightness shine,</div>
+				</div>
 			</div>
 		</div>
 
 		<div id="referencePage">
-			<p>same reference</p>
+			<div id="referencePageContent">
+			</div>
 		</div>
 	</div>
 

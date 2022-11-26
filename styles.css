@@ -4,7 +4,7 @@
 	margin: 0;
 	padding: 0;
 
-	font-family: arial;
+	font-family: "georgia";
 }
 html {
 	height: 100%;
@@ -64,10 +64,10 @@ body {
 	overflow-y: scroll;
 }
 
-#cantoPageContent {
-	width: 460px;
+#cantoPageContent, #referencePageContent {
+	width: 490px;
 	font-size: 14pt;
-	border: 1px solid red;
+	border: ;
 
 }
 
@@ -80,3 +80,20 @@ select{
 select:focus{
   outline:none;
 }
+
+#cantoPageContent div:hover, .permanentHighlight {
+	background-color: #fdfca3;
+}
+
+.lineWrapper {
+	display: flex;
+	justify-content: flex-start;
+}
+.lineNumber {
+	padding-right: 10px;
+	display: inline;
+	font-family: "courier new";
+}
+
+
+
