@@ -36,15 +36,16 @@ function displayBible(data) {
 function displayChapter(data) {
 	bibleBox = document.getElementById("referencePageContent");
 	bibleBox.innerHTML = "";
-	//title = document.getElementById("titleRight");
-	//title.innerHTML = "<h1>" + data.reference + ":" + test + "</h1>";
+	title = document.createElement("div");
+	title.innerHTML = "<b>" + data.reference + ":" + test + "</b>";
+	bibleBox.append(title);
 
 	for (i = 0; i < data.verses.length; i++) {
 		number = i+1;
 		verse = document.createElement("div")
 		bibleBox.append(verse)
 		if (number == test) {
-			 verse.classList.add("exactReference");
+			 verse.classList.add("permanentHighlight");
 		}
 		verse.innerHTML = number + ": " + data.verses[i].text;
 	}
@@ -57,6 +58,7 @@ function displayVerse(data) {
 	verse = document.createElement("div");
 	bibleBox.append(verse);
 	verse.innerHTML = data.verses[test].text + " <b>(" + data.reference + ":" + test + ")</b>";
+
 
 }
 

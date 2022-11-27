@@ -34,6 +34,11 @@ body {
 	background-color: #f2f2f2;
 	border-top: 3px solid #e0e0e0;
 	border-bottom: 3px solid #e0e0e0;
+
+	display: flex;
+	flex-direction: flex-start;
+	align-items: center;
+	padding-left: 30px;
 }
 
 #mainContent {
@@ -62,6 +67,7 @@ body {
 	justify-content: center;
 	box-shadow: 3px 3px 3px 3px #ccc;
 	overflow-y: scroll;
+	margin-bottom: 30px;
 }
 
 #cantoPageContent, #referencePageContent {
@@ -75,6 +81,8 @@ select{
   border:none;
   padding: 10px 20px;
   border-radius:5px;
+  height: 40px;
+  margin-right: 20px;
 }
 
 select:focus{
@@ -83,6 +91,7 @@ select:focus{
 
 #cantoPageContent div:hover, .permanentHighlight {
 	background-color: #fdfca3;
+
 }
 
 .lineWrapper {
@@ -93,7 +102,25 @@ select:focus{
 	padding-right: 10px;
 	display: inline;
 	font-family: "courier new";
+	font-size: 12pt;
+	
 }
 
 
+.reference {
+	/*background-color: #fefdd1;*/
+	text-decoration-line: underline;
+	text-decoration-style: dashed;
+	text-decoration-thickness: 2px;
+	text-decoration-color: gray;
+}
+.reference:hover {
+	cursor: pointer;
 
+}
+.paragraphBreak {
+	height: 40px;
+}
+.paragraphBreak:hover {
+	background-color: #fdfdfd !important;
+}
