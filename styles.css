@@ -103,7 +103,7 @@ select:focus{
 	display: inline;
 	font-family: "courier new";
 	font-size: 12pt;
-	
+
 }
 
 
@@ -121,6 +121,10 @@ select:focus{
 .paragraphBreak {
 	height: 40px;
 }
-.paragraphBreak:hover {
+.paragraphBreak:hover, #cantoTitle:hover {
 	background-color: #fdfdfd !important;
+}
+
+#cantoTitle {
+	padding-bottom: 15px;
 }
