@@ -163,6 +163,10 @@ button:hover {
 .generalSearchContainer {
 	padding: 15px;
 }
+.generalSearchContainer p {
+	padding-bottom: 3px;
+	padding-top: 2px;
+}
 
 #books {
 	padding-top: 8px;
