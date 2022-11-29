@@ -77,16 +77,20 @@ body {
 
 }
 
-select{
+select, button, input{
   border:none;
   padding: 10px 20px;
   border-radius:5px;
   height: 40px;
   margin-right: 20px;
+  background-color: #fdfdfd;
 }
 
 select:focus{
   outline:none;
+}
+button:hover {
+	cursor: pointer;
 }
 
 #cantoPageContent div:hover, .permanentHighlight {
@@ -127,4 +131,40 @@ select:focus{
 
 #cantoTitle {
 	padding-bottom: 15px;
+}
+
+#searchPage {
+	display: none;
+	position: absolute;
+	width: 600px;
+	height: 400px;
+	
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+	background-color: #f2f2f2;
+	box-shadow: 3px 3px 3px 3px #ccc;
+	padding: ;
+}
+#searchPageHeader {
+	width: 100%;
+	height: 30px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: #ededed;
+	border-bottom: 3px solid #e0e0e0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	font-weight: bold;
+}
+
+.generalSearchContainer {
+	padding: 15px;
+}
+
+#books {
+	padding-top: 8px;
+	padding-bottom: 8px;
 }

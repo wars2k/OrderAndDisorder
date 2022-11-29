@@ -9,10 +9,10 @@ function getVerse(book,chapter,verse) {
 	highlight.classList.add("permanentHighlight");
 	//get the requested translation
 	var select = document.getElementById("translationSelection");
-	var value = select.value;
+	var translation = select.value;
 	//fetch the data
 	test = verse;
-    fetch('https://bible-api.com/' + book + '+' + chapter + '?translation=' + value)
+    fetch('https://bible-api.com/' + book + '+' + chapter + '?translation=' + translation)
     .then(function(resp) { return resp.json() }) // Convert data to json
     .then(function(data) {
     displayBible(data);
@@ -54,12 +54,40 @@ function displayChapter(data) {
 function displayVerse(data) {
 	bibleBox = document.getElementById("referencePageContent");
 	bibleBox.innerHTML = "";
-	test = test - 1;
+	if (test == '') {
+		alert = document.createElement("div");
+		alert.innerHTML = "<b>Error: " + data.reference + "</b>"
+		alertText = document.createElement("div"); 
+		alertText.innerHTML = "This line references an entire chapter. Switch to 'Verse and Chapter' in the drop-down box above to see the entire reference."
+		bibleBox.append(alert);
+		bibleBox.append(alertText);
+	}
+	else if (test.includes("-")) {
+
+		verseArray = test.split("-");
+		passageLength = parseInt(verseArray[1]) - parseInt(verseArray[0]);
+
+		firstVerse = parseInt(verseArray[0]);
+
+		for (i=0; i <= passageLength; i++) {
+				verse = document.createElement("div");
+				bibleBox.append(verse);
+				
+				correctedFirstVerse = firstVerse - 1; //since first verse is 0 in the JSON array.
+				lineNumber = correctedFirstVerse + i;
+				verse.innerHTML = lineNumber + ": " + data.verses[correctedFirstVerse + i].text;
+		}
+		citation = document.createElement("div");
+		bibleBox.append(citation);
+		citation.innerHTML = "<b>(" + data.reference + ":" + test + ")</b>";
+
+	} else {
+	test2 = test - 1;
 	verse = document.createElement("div");
 	bibleBox.append(verse);
-	verse.innerHTML = data.verses[test].text + " <b>(" + data.reference + ":" + test + ")</b>";
+	verse.innerHTML = data.verses[test2].text + " <b>(" + data.reference + ":" + test + ")</b>";
 
-
+}
 }
 
 
@@ -91,4 +119,32 @@ function changeLineNumbers() {
 			lineNumber.style.display = "none";
 		});
 	}
+}
+
+function toggleSearchWindow() {
+	searchWindow = document.getElementById("searchPage");
+	if (searchWindow.style.display == "block") {
+		searchWindow.style.display = "none";
+	} else {
+		searchWindow.style.display = "block";
+	}
+}
+
+function bookSearch() {
+	var select = document.getElementById("books");
+	var value = select.value;
+	className = value;
+	linesWithReference = document.getElementsByClassName("reference");
+	for (i = 0; i < linesWithReference.length; i++) {
+		linesWithReference[i].style.background = "";
+	}
+	linesWithReference = document.getElementsByClassName(className);
+	for (i = 0; i < linesWithReference.length; i++) {
+		linesWithReference[i].style.background = "#f6aa90";
+		
+	}
+	bookCount = document.getElementById("bookCount");
+	bookCount.innerText = "Count: " + linesWithReference.length;
+
+
 }
