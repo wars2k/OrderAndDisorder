@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-[This site](https://wars2kk.github.io/OrderAndDisorder) is a project dedicated to Canto 4 of Lucy Hutchinson's *Order and Disorder*, an epic poem full of Biblical allusions. This project allows readers of *Order and Disorder* to easily track the Biblical references that Hutchinson makes without needing to constantly reference a Bible. 
+[This site](https://wars2kk.github.io/OrderAndDisorder) is a project dedicated to Canto 4 of Lucy Hutchinson's *Order and Disorder*, an epic poem from the 17th century full of Biblical allusions. This project allows readers of *Order and Disorder* to easily track the Biblical references that Hutchinson makes without needing to constantly reference a Bible. 
 
 ## How to Use The Site
 
