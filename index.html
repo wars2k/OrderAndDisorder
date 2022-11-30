@@ -7,7 +7,7 @@
 
 <body id="body">
 	<div id="header">
-		<h1>Biblical Allusions in <i>Order and Disorder</i><h1>
+		<h1 id="title">Biblical Allusions in <i>Order and Disorder</i><h1>
 	</div>
 	<div id="menuHeader">
 
@@ -27,7 +27,8 @@
 			<option value="true" selected>Line Numbers</option>
 			<option value ="false">Hide Line Numbers</option>
 		</select>
-		<button name="searchButton" id="searchButton" onclick="toggleSearchWindow()">Search</button>
+		<button name="searchButton" id="searchButton" onclick="toggleSearchWindow()">Tools</button>
+		<button name="github" id="github" onclick ="openGithub()">Github/About</button>
 
 	</div>
 
@@ -647,11 +648,11 @@
 
 	<div id="searchPage">
 		<div id="searchPageHeader">
-			<p>Search Tool</p>
+			<p>Tools</p>
 		</div>
 		<div id="searchPageContent">
 			<div class="generalSearchContainer">
-				<p><b>By Books of the Bible:</b></p>
+				<p><b>Search by books of the Bible:</b></p>
 					<select name="books" id="books" onchange="bookSearch()">
 						<option value="genesis">Genesis</option>
 						<option value="joshua">Joshua</option>
@@ -687,7 +688,7 @@
 					</select>
 				<p id="bookCount">Count: </p>
 
-				<p>Line Numbers: </p>
+				<p id="bookLineNumbers">Line Numbers: </p>
 
 			</div>
 			<div class="generalSearchContainer">

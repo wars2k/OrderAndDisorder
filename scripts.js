@@ -73,7 +73,7 @@ function displayVerse(data) {
 				verse = document.createElement("div");
 				bibleBox.append(verse);
 				
-				correctedFirstVerse = firstVerse - 1; //since first verse is 0 in the JSON array.
+				correctedFirstVerse = firstVerse; 
 				lineNumber = correctedFirstVerse + i;
 				verse.innerHTML = lineNumber + ": " + data.verses[correctedFirstVerse + i].text;
 		}
@@ -135,16 +135,28 @@ function bookSearch() {
 	var value = select.value;
 	className = value;
 	linesWithReference = document.getElementsByClassName("reference");
+	lineNumbers = document.getElementById("bookLineNumbers");
+	lineNumbers.innerHTML = "Line: ";
 	for (i = 0; i < linesWithReference.length; i++) {
 		linesWithReference[i].style.background = "";
 	}
 	linesWithReference = document.getElementsByClassName(className);
 	for (i = 0; i < linesWithReference.length; i++) {
 		linesWithReference[i].style.background = "#f6aa90";
-		
+		parentDiv = linesWithReference[i].parentNode;
+		parentDivChildren = parentDiv.children;
+		content = parentDivChildren[0].innerHTML;
+		console.log
+		lineNumbers = document.getElementById("bookLineNumbers");
+		lineNumbers.innerHTML += content + ", ";
+
 	}
 	bookCount = document.getElementById("bookCount");
 	bookCount.innerText = "Count: " + linesWithReference.length;
 
 
+}
+
+function openGithub() {
+	window.open("https://github.com/wars2k/orderanddisorder/tree/redesign");
 }
