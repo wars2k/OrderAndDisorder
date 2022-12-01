@@ -20,4 +20,4 @@ To search through Canto 4, simply use ``ctr + f`` or ``cmd + f``.
 
 To see where and how often each book of the Bible is referenced, click the **Tools** button, then select a book from the drop-down menu in the **Tools** pop-up window. 
 
-## Limitations
+
