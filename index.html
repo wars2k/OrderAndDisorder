@@ -7,130 +7,696 @@
 
 <body id="body">
 	<div id="header">
-		<h1>Biblical Allusions in <i>Order and Disorder</i><h1>
+		<h1 id="title">Biblical Allusions in <i>Order and Disorder</i><h1>
 	</div>
-	<div id="mainContent1">
-	<div id="sidebar">
-		<ul>
-			<li>About</li>
-			<li>Canto 4</li>
-			<li>Canto 5</li>
-		</ul>
+	<div id="menuHeader">
+
+
+		<select name="referenceSelection" id="referenceSelection">
+			<option value="verse" selected>Verse only</option>
+			<option value="chapter">Verse and Chapter</option>
+			<!--<option value="verse+4">Verse in Context</option>-->
+		</select>
+		<select name="translationSelection" id="translationSelection">
+			<option value="kjv" selected>King James Version</option>
+			<option value="bbe">Bible in Basic English</option>
+			<option value="web">World English Bible</option>
+			<!--<option value="oeb-us">Open English Bible</option>-->
+		</select>
+		<select name="lineNumbers" id="lineNumbers" onChange="changeLineNumbers()">
+			<option value="true" selected>Line Numbers</option>
+			<option value ="false">Hide Line Numbers</option>
+		</select>
+		<button name="searchButton" id="searchButton" onclick="toggleSearchWindow()">Tools</button>
+		<button name="github" id="github" onclick ="openGithub()">Github/About</button>
+
 	</div>
+
+
 	<div id="mainContent">
+		<div id="cantoPage">
+			<div id="cantoPageContent">
+				<div id="cantoTitle"><b><i>Order and Disorder</i>, Canto 4</b></div>
+				<div class="lineWrapper">
+					<div class="reference genesis" onclick="getVerse('genesis','1','31')">Good were all natures as God made them all,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference romans" onclick="getVerse('romans','9','21-23')" class="romans">Good was his will, permitting some to fall:</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference romans" onclick="getVerse('romans','11','')" class="romans">That th’rest, renouncing their frail strength, might stand</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference romans" onclick="getVerse('romans','3','6')" class="romans">Humble and firm in his supporting hand;</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference genesis" onclick="getVerse('genesis','18','25')" class="genesis">His wisdom and omnipotence might own</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference romans" onclick="getVerse('romans','11','33')" class="romans">When his foes’ power and craft is overthrown;</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference corinthians1" onclick="getVerse('1corinthians','10','12')" class="corinthians1">Seeing his hate of sin, might thence confess</div>
+				</div>
+				<div class="lineWrapper">					
+					<div>His pure innate and perfect holiness,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference romans" onclick="getVerse('romans','16','20')" class="romans">And 
+					that the glory of his justice might</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference psalms" onclick="getVerse('psalms','2','')" class="psalms">In the bold rebels’ torturing flames seem bright;</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference joshua" onclick="getVerse('joshua','24','19')" class="">That th’ever-blessed Redeemer might take place</div>
+				</div>
+				<div class="lineWrapper">
+					<div>To illustrate! his rich mercy and free grace</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference psalms" onclick="getVerse('psalms','5','4-6')" class="psalms">Whereby he fallen sinners doth restore</div>
+				</div>
+				<div class="lineWrapper">
+					<div>To fuller bliss than they enjoyed before;</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference peter1" onclick="getVerse('1peter','1','1-10')" class="peter1">That virtue might in its clear brightness shine,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference ephesians" onclick="getVerse('ephesians','1','4')" class="ephesians">Which, like rich ore concealéd in the mine,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference ephesians" onclick="getVerse('ephesians','2','5')" class="ephesians">Had not been known but that opposing vice</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference romans" onclick="getVerse('romans','8','35-39')" class="romans">Illustrates it by frequent exercise.</div>
+				</div>
+				
+					<div class="paragraphBreak"></div>
+				<div class="lineWrapper">
+					<div class="reference romans" onclick="getVerse('romans','5','5')" class="romans">If all were good, whence then arose the ill?</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference peter1" onclick="getVerse('1peter','4','12-14')" class="peter1">Twas not in God’s, but in the creatures’ will,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Averting! from that good which is supreme,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference ecclesiastes" onclick="getVerse('ecclesiastes','7','29')" class="ecclesiastes">Corrupted so, as a declining stream</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference jude" onclick="getVerse('jude','6','')" class="jude">That breaks off its communion with its head,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference john" onclick="getVerse('john','8','44')" class="john">By whom its life and sweetness late were fed,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Turns to a noisome, dead, and poisonous lake,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Infecting all who the foul waters take:</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Or as a branch cut from the living tree</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Passes into contempt immediately,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>And dies divided from its glorious stock;</div>
+				</div>
+				<div class="lineWrapper">
+					<div>So strength disjoinéd from the living rock</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Turns to contemnéd imbecility,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference jeremiah" onclick="getVerse('jeremiah','2','13')" class="jeremiah">And doth to all its grace and glory die.</div>
+				</div>
+				
+					<div class="paragraphBreak"></div>
+				
+				<div class="lineWrapper">
+					<div>Some new-made angels thus, not more sublime</div>
+				</div>
+				<div class="lineWrapper">
+					<div>In nature than transcending in their crime,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Quitting th’eternal fountain of their light,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference ephesians" onclick="getVerse('ephesians','2','2')" class="ephesians">Became the first-born sons of woe and night,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference acts" onclick="getVerse('acts','26','18')" class="acts">Princes of darkness and the sad abyss,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference matthew" onclick="getVerse('matthew','25','41')" class="matthew">Which now their curséd place and portion is,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference revelations" onclick="getVerse('revelations','20','10')" class="revelations">Where they no more must see God’s glorious face</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Nor ever taste of his refreshing grace,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>But in the fire of his fierce anger dwell,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Which though it burns, enlightens not their hell.</div>
+				</div>
+				<div class="lineWrapper">
+					<div>But circumstances that we cannot know</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Of their rebellion and their overthrow</div>
+				</div>
+				<div class="lineWrapper">
+					<div>We will not dare t’invent, nor will we take</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Guesses from the reports themselves did make</div>
+				</div>
+				<div class="lineWrapper">
+					<div>To their old priests, to whom they did devise</div>
+				</div>
+				<div class="lineWrapper">
+					<div>To inspire some truths, wrapped up in-many lies;</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Such as their gross poetic fables are,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Saturn’s extrusion, the bold Giants’ war,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Division of the universal realm</div>
+				</div>
+				<div class="lineWrapper">
+					<div>To gods that in high heaven steer the helm,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Others who all things in the ocean guide,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>And those who in th’infernal court preside,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Who there a vast and gloomy empire sway,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Whom all the furies and the ghosts obey.</div>
+				</div>
+				
+					<div class="paragraphBreak"></div>
+				
+				<div class="lineWrapper">
+					<div>But not to name these foolish impious tales,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Which stifle truth in her pretended veils,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Let us in its own blazing conduct go</div>
+				</div>
+				<div class="lineWrapper">
+					<div>And look no further than that light doth show;</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Wherein we see the present powers of hell,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Before they under God’s displeasure fell,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Were once endued with grace and excellence</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference luke" onclick="getVerse('luke','10','18')" class="luke">Beyond the comprehension of our sense.</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Pure holy lights in the bright heaven were</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference jude" onclick="getVerse('jude','6','')" class="jude">Blazing about the throne, but not fixed there;</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Where, by the apostasy of their own will ,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Precipitating them into all ill,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference peter2" onclick="getVerse('2peter','2','4')" class="peter2">And God’s just wrath, whose eyes are far too pure</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference habakkuk" onclick="getVerse('habakkuk','1','13')" class="habakkuk">Stained and polluted objects to endure,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference luke" onclick="getVerse('luke','10','18')" class="luke">They fell like lightning, hurled in his fierce ire,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference james" onclick="getVerse('james','3','6')" class="james">And, falling, set the lower world on fire:</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference john" onclick="getVerse('john','8','44')" class="john">Which their loose prison is where they remain,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference jude" onclick="getVerse('jude','6','')" class="jude">And walk as criminals under God’s chain</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Until the last and great assizes come,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference corinthians1" onclick="getVerse('1corinthians','6','3')" class="corinthians1">When execution shall seal up their doom.</div>
+				</div>
+				
+					<div class="paragraphBreak"></div>
+				
+				<div class="lineWrapper">
+					<div class="reference">Thus are they now to their created light,</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference peter1" onclick="getVerse('1peter','5','8')" class="peter1">Unto all truth and goodness opposite, _</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference job" onclick="getVerse('job','1','7')" class="job">Hating the peace and joy that reigns above,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Vainly contending to extinguish love,</div>
+				</div>
+				<div class="lineWrapper">
+					<div>Ruin God’s sacred empire, and destroy</div>
+				</div>
+				<div class="lineWrapper">
+					<div>That blessedness they never can enjoy.</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference mark" onclick="getVerse('mark','3','22-26')" class="mark">A Chief they have, whose sovereign power and place</div>
+				</div>
+				<div class="lineWrapper">
+					<div class="reference revelations" onclick="getVerse('revelations','20','10')" class="revelations">But adds to’s sin, his torture, and disgrace.</div>
+				</div>
+				<div class="lineWrapper"><div>An order too there is in their dire state,</div></div>
+				<div class="lineWrapper"><div>Though they all orders else disturb and hate.</div></div>
+				<div class="lineWrapper"><div class="reference luke" onclick="getVerse('luke','8','30')" class="luke">Ten thousand thousand wicked spirits stand</div></div>
+				<div class="lineWrapper"><div>Attending their black prince at his command,</div></div>
+				<div class="lineWrapper"><div>To all imaginable evils pressed</div></div>
+				<div class="lineWrapper"><div>That may promote their common interest.</div></div>
+				<div class="lineWrapper"><div>Nor are they linkéd thus by faith and love,</div></div>
+				<div class="lineWrapper"><div>But hate of God and goodness, which doth move</div></div>
+				<div class="lineWrapper"><div>The same endeavours and desires in all,</div></div>
+				<div class="lineWrapper"><div class="reference matthew" onclick="getVerse('matthew','12','25-26')" class="matthew">Lest civil wars should make their empire fall.</div></div>
+				<div class="paragraphBreak"></div>
+				<div class="lineWrapper"><div class="reference revelations" onclick="getVerse('revelations','20','2')" class="revelations">An empire which the Almighty doth permit,</div></div>
+				<div class="lineWrapper"><div class="reference job" onclick="getVerse('job','2','6')" class="job">Yet so as he controls and limits it,</div></div>
+				<div class="lineWrapper"><div>Suffering their rage sometimes to take effect</div></div>
+				<div class="lineWrapper"><div class="reference colossians" onclick="getVerse('colossians','2','14-15')" class="colossians">Only to be the more severely checked</div></div>
+				<div class="lineWrapper"><div class="reference hebrews" onclick="getVerse('hebrews','2','9,14')" class="hebrews">When he produces a contrary end</div></div>
+				<div class="lineWrapper"><div>From what they did maliciously intend,</div></div>
+				<div class="lineWrapper"><div class="reference luke" onclick="getVerse('luke','22','3')" class="luke">Befools their wisdom, crosses their designs,</div></div>
+				<div class="lineWrapper"><div class="reference timothy2" onclick="getVerse('2timothy','2','25-26')" class="timothy2">And blows them up in their own crafty mines,</div></div>
+				<div class="lineWrapper"><div>Allows them play in the entangling net</div></div>
+				<div class="lineWrapper"><div class="reference ephesians" onclick="getVerse('ephesians','6','11-12')" class="ephesians">So to be faster in damnation set,</div></div>
+				<div class="lineWrapper"><div class="reference peter1" onclick="getVerse('1peter','5','8')" class="peter1">Submits them to each other’s tyrannies</div></div>
+				<div class="lineWrapper"><div>Who did God’s softer sacred bonds despise,</div></div>
+				<div class="lineWrapper"><div class="reference revelations" onclick="getVerse('revelations','12','12')" class="revelations">Lets them still fight who never can prevail,</div></div>
+				<div class="lineWrapper"><div>More cursed if they succeed than if they fail,</div></div>
+				<div class="lineWrapper"><div>Since every soul the rebels gain from God</div></div>
+				<div class="lineWrapper"><div>Adds but another scorpion to that rod,</div></div>
+				<div class="lineWrapper"><div>Bound up, that they may mutual torturers be,</div></div>
+				<div class="lineWrapper"><div class="reference luke" onclick="getVerse('luke','16','24')" class="luke">Tormented and tormenting equally.</div></div>
+				<div class="lineWrapper"><div class="reference revelations" onclick="getVerse('revelations','14','10-11')" class="revelations">As a wise general that doth design</div></div>
+				<div class="lineWrapper"><div class="reference matthew" onclick="getVerse('matthew','25','41')" class="matthew">To keep his army still in discipline</div></div>
+				<div class="lineWrapper"><div>Suffers the embodying of some slighter foes</div></div>
+				<div class="lineWrapper"><div>Which he at his own pleasure can enclose</div></div>
+				<div class="lineWrapper"><div>And vanquish, that he justly may chastise</div></div>
+				<div class="lineWrapper"><div>Their folly, and his own troops exercise,</div></div>
+				<div class="lineWrapper"><div>Their vigilance, their faith and valour prove;</div></div>
+				<div class="lineWrapper"><div>Endearing them thereby to his own love,</div></div>
+				<div class="lineWrapper"><div class="reference luke" onclick="getVerse('luke','22','31-32')" class="luke">As he alike endears himself to theirs</div></div>
+				<div class="lineWrapper"><div>By his continual succours and kind cares:</div></div>
+				<div class="lineWrapper"><div class="reference john" onclick="getVerse('john','17','20')" class="john">So the Almighty gives the devils scope,</div></div>
+				<div class="lineWrapper"><div class="reference matthew" onclick="getVerse('matthew','4','')" class="matthew">Who, though they are excluded from all hope</div></div>
+				<div class="lineWrapper"><div class="reference hebrews" onclick="getVerse('hebrews','2','18')" class="hebrews">Of e’er escaping, no reluctance have,</div></div>
+				<div class="lineWrapper"><div>But, like the desperate villains they make brave,</div></div>
+				<div class="lineWrapper"><div class="reference romans" onclick="getVerse('romans','16','20')" class="romans">To death pursue their bold attempts, that all</div></div>
+				<div class="lineWrapper"><div>O’er whom they cannot reign with them may fall.</div></div>
+				<div class="lineWrapper"><div>And though God’s watchful guards besiege them round</div></div>
+				<div class="lineWrapper"><div>That none can pass their strict prescribéd bound,</div></div>
+				<div class="lineWrapper"><div class="reference revelations" onclick="getVerse('revelations','12','7-8')" class="revelations">Yet make they daily sallies in their pride,</div></div>
+				<div class="lineWrapper"><div class="reference matthew" onclick="getVerse('matthew','4','11')" class="matthew">Which, still repulsed, the holy host deride,</div></div>
+				<div class="lineWrapper"><div class="reference jude" onclick="getVerse('jude','9','')" class="jude">Their malice in itself and its event!</div></div>
+				<div class="lineWrapper"><div>Being equally a crime and punishment.</div></div>
+				<div class="lineWrapper"><div>Thus though sin in itself be ill, tis good</div></div>
+				<div class="lineWrapper"><div>That sin should be, for thereby rectitude</div></div>
+				<div class="lineWrapper"><div>Thorough opposed iniquity, as light</div></div>
+				<div class="lineWrapper"><div>By shades, is more conspicuous and more bright.</div></div>
 
-		<div id="contentLeft">
-			<div class="spacer">
-			</div>
-			<div id="titleLeft">
-				<h1>Canto 4</h1>
-			</div>
-			<div id="cantoBox">
-				<div class="reference" onclick="getVerse('genesis','1','31')">Good were all natures as God made them all,</div>
-				<div class="reference" onclick="getVerse('romans','9','22')">Good was his will, permitting some to fall:</div>
-				<div class="reference" onclick="getVerse('romans','11','')">That th’rest, renouncing their frail strength, might stand</div>
-				<div class="reference" onclick="getVerse('romans','3','6')">Humble and firm in his supporting hand;</div>
-				<div class="reference" onclick="getVerse('genesis','18','25')">His wisdom and omnipotence might own</div>
-				<div class="reference" onclick="getVerse('romans','11','33')">When his foes’ power and craft is overthrown;</div>
-				<div class="reference" onclick="getVerse('1corinthians','10','12')">Seeing his hate of sin, might thence confess</div>
-				<div>His pure innate and perfect holiness,</div>
-				<div class="reference" onclick="getVerse('romans','16','20')">And that the glory of his justice might</div>
-				<div class="reference" onclick="getVerse('psalms','2','')">In the bold rebels’ torturing flames seem bright; 10</div>
-				<div class="reference" onclick="getVerse('joseph','24','19')">That th’ever-blessed Redeemer might take place</div>
-				<div>To illustrate! his rich mercy and free grace</div>
-				<div class="reference" onclick="getVerse('psalms','5','5')">Whereby he fallen sinners doth restore</div>
-				<div>To fuller bliss than they enjoyed before;</div>
-				<div class="reference" onclick="getVerse('1peter','1','')">That virtue might in its clear brightness shine,</div>
-				<div class="reference">Which, like rich ore concealéd in the mine,</div>
-				<div class="reference">Had not been known but that opposing vice</div>
-				<div class="reference">Illustrates it by frequent exercise.</div>
 				<div class="paragraphBreak"></div>
-				<div class="reference">If all were good, whence then arose the ill?</div>
-				<div class="reference">Twas not in God’s, but in the creatures’ will,</div>
-				<div>Averting! from that good which is supreme,</div>
-				<div class="reference">Corrupted so, as a declining stream</div>
-				<div class="reference">That breaks off its communion with its head,</div>
-				<div class="reference">By whom its life and sweetness late were fed,</div>
-				<div>Turns to a noisome, dead, and poisonous lake,</div>
-				<div>Infecting all who the foul waters take:*“#</div>
-				<div>Or as a branch cut from the living tree</div>
-				<div>Passes into contempt immediately,</div>
-				<div>And dies divided from its glorious stock;</div>
-				<div>So strength disjoinéd from the living rock</div>
-				<div>Turns to contemnéd imbecility,</div>
-				<div class="reference">And doth to all its grace and glory die.</div>
+
+				<div class="lineWrapper"><div>The wonderful creation of mankind,</div></div>
+				<div class="lineWrapper"><div>For lasting glory and rich grace designed,</div></div>
+				<div class="lineWrapper"><div>The blesséd angels looked on with delight,</div></div>
+				<div class="lineWrapper"><div class="reference luke" onclick="getVerse('luke','15','10')" class="luke">Gladded to see us climb so near their height,</div></div>
+				<div class="lineWrapper"><div class="reference hebrews" onclick="getVerse('hebrews','12','22')" class="hebrews">Above all other works, next in degree,</div></div>
+				<div class="lineWrapper"><div>And capable of their society.</div></div>
+				<div class="lineWrapper"><div>But ’twas far otherwise with those that fell:</div></div>
+				<div class="lineWrapper"><div>Man’s destined heaven increased their hell,</div></div>
+				<div class="lineWrapper"><div>While they burned with a proud malicious spite</div></div>
+				<div class="lineWrapper"><div class="reference john" onclick="getVerse('john','8','44')" class="john">To see a new-made, earth-born favourite</div></div>
+				<div class="lineWrapper"><div>For their high seats and empty thrones designed;</div></div>
+				<div class="lineWrapper"><div>Therefore both against God and man combined</div></div>
+				<div class="lineWrapper"><div>To hinder God’s decree from taking place,</div></div>
+				<div class="lineWrapper"><div>And to divest man of his Maker’s grace;</div></div>
+				<div class="lineWrapper"><div class="reference peter1" onclick="getVerse('1peter','3','13')" class="peter1">Which while he in a pure obedience stood</div></div>
+				<div class="lineWrapper"><div>They knew, not all their force nor cunning could,</div></div>
+				<div class="lineWrapper"><div>But if they could with any false pretence</div></div>
+				<div class="lineWrapper"><div>Inveigle him to quit his innocence,</div></div>
+				<div class="lineWrapper"><div>They hoped death would prevent! the dreaded womb</div></div>
+				<div class="lineWrapper"><div>From whence their happier successors must come.</div></div>
+
 				<div class="paragraphBreak"></div>
-				<div>Some new-made angels thus, not more sublime</div>
-				<div>In nature than transcending in their crime,</div>
-				<div>Quitting th’eternal fountain of their light,</div>
-				<div class="reference">Became the first-born sons of woe and night,</div>
-				<div class="reference">Princes of darkness and the sad abyss,</div>
-				<div class="reference">Which now their curséd place and portion is,</div>
-				<div class="reference">Where they no more must see God’s glorious face</div>
-				<div>Nor ever taste of his refreshing grace,</div>
-				<div>But in the fire of his fierce anger dwell,</div>
-				<div>Which though it burns, enlightens not their hell.</div>
-				<div>But circumstances that we cannot know</div>
-				<div>Of their rebellion and their overthrow</div>
-				<div>We will not dare t’invent, nor will we take</div>
-				<div>Guesses from the reports themselves did make</div>
-				<div>To their old priests, to whom they did devise</div>
-				<div>To inspire some truths, wrapped up in-many lies;</div>
-				<div>Such as their gross poetic fables are,</div>
-				<div>Saturn’s extrusion, the bold Giants’ war,</div>
-				<div>Division of the universal realm</div>
-				<div>To gods that in high heaven steer the helm,</div>
-				<div>Others who all things in the ocean guide,</div>
-				<div>And those who in th’infernal court preside,</div>
-				<div>Who there a vast and gloomy empire sway,</div>
-				<div>Whom all the furies and the ghosts obey.</div>
+
+				<div class="lineWrapper"><div>Wherefore th’accurséd sovereign of Hell,</div></div>
+				<div class="lineWrapper"><div>Thinking no other devil could so well</div></div>
+				<div class="lineWrapper"><div class="reference genesis" onclick="getVerse('genesis','3','1')" class="genesis">Act this ill part, whose consequence was high</div></div>
+				<div class="lineWrapper"><div>Enough to engage his hateful majesty,</div></div>
+				<div class="lineWrapper"><div>Himself exposes for the common cause,</div></div>
+				<div class="lineWrapper"><div>And with his hellish kingdom’s full applause</div></div>
+				<div class="lineWrapper"><div>Goes forth, putting himself into disguise,</div></div>
+				<div class="lineWrapper"><div>And so within a bright-scaled serpent lies,</div></div>
+				<div class="lineWrapper"><div>Folded about the fair forbidden tree,</div></div>
+				<div class="lineWrapper"><div>Watching a wished-for opportunity;</div></div>
+				<div class="lineWrapper"><div>Which Eve soon gave him, coming there alone</div></div>
+				<div class="lineWrapper"><div>So to be first and easier overthrown;</div></div>
+				<div class="lineWrapper"><div>On whose weak side th’assault had not been made</div></div>
+				<div class="lineWrapper"><div>Had she not from her firm protection strayed;</div></div>
+				<div class="lineWrapper"><div class="reference timothy2" onclick="getVerse('2timothy','3','6')" class="timothy2">But so the Devil then, so lewd men now</div></div>
+				<div class="lineWrapper"><div>Prevail, when women privacies allow,</div></div>
+				<div class="lineWrapper"><div>And to those flattering whispers lend an ear</div></div>
+				<div class="lineWrapper"><div>Which even impudence itself would fear</div></div>
+				<div class="lineWrapper"><div>To utter in the presence of a friend,</div></div>
+				<div class="lineWrapper"><div>Whose virtuous awe our frailty might defend.</div></div>
+				<div class="lineWrapper"><div>Though unexperience might excuse Eve’s fault,</div></div>
+				<div class="lineWrapper"><div>Yet those who now give way to an assault,</div></div>
+				<div class="lineWrapper"><div>By suffering it alone, none can exempt</div></div>
+				<div class="lineWrapper"><div>From the just blame that they their tempters tempt,</div></div>
+				<div class="lineWrapper"><div>And by vain confidence themselves betray,</div></div>
+				<div class="lineWrapper"><div>Fondly secure in a known desperate way.</div></div>
+
 				<div class="paragraphBreak"></div>
-				<div>But not to name these foolish impious tales,</div>
-				<div>Which stifle truth in her pretended veils,</div>
-				<div>Let us in its own blazing conduct go</div>
-				<div>And look no further than that light doth show;</div>
-				<div>Wherein we see the present powers of hell,</div>
-				<div>Before they under God’s displeasure fell,</div>
-				<div>Were once endued with grace and excellence</div>
-				<div class="reference">Beyond the comprehension of our sense.</div>
-				<div>Pure holy lights in the bright heaven were</div>
-				<div class="reference">Blazing about the throne, but not fixed there;</div>
-				<div>Where, by the apostasy of their own will ,</div>
-				<div>Precipitating them into all ill,</div>
-				<div class="reference">And God’s just wrath, whose eyes are far too pure</div>
-				<div class="reference">Stained and polluted objects to endure,</div>
-				<div class="reference">They fell like lightning, hurled in his fierce ire,</div>
-				<div class="reference">And, falling, set the lower world on fire:</div>
-				<div class="reference">Which their loose prison is where they remain,</div>
-				<div class="reference">And walk as criminals under God’s chain</div>
-				<div>Until the last and great assizes come,</div>
-				<div class="reference">When execution shall seal up their doom.</div>
+
+				<div class="lineWrapper"><div>As Eve stood near the tree, the subtle beast,</div></div>
+				<div class="lineWrapper"><div>By Satan moved, his speech to her addressed:</div></div>
+				<div class="lineWrapper"><div>‘Hath God,’ said he, ‘forbid that you should taste</div></div>
+				<div class="lineWrapper"><div>These pleasant fruits which in your eyes are placed?</div></div>
+				<div class="lineWrapper"><div>Why are the tempting boughs exposed if you</div></div>
+				<div class="lineWrapper"><div>May not delight your palates with your view?</div></div>
+				<div class="lineWrapper"><div>‘God,’ said the woman, ‘gives us liberty</div></div>
+				<div class="lineWrapper"><div>To eat without restraint of every tree</div></div>
+				<div class="lineWrapper"><div>Which in the garden grows, but only one,</div></div>
+				<div class="lineWrapper"><div>Restrained by such a prohibition,</div></div>
+				<div class="lineWrapper"><div>We dare not touch it, for whene’er we do</div></div>
+				<div class="lineWrapper"><div>A certain death will our offence ensue.’</div></div>
+				<div class="lineWrapper"><div>Then did the wicked subtle beast reply,</div></div>
+				<div class="lineWrapper"><div>‘Ah, simple wretch, you shall not surely die,</div></div>
+				<div class="lineWrapper"><div>God enviously to you this fruit denies.</div></div>
+				<div class="lineWrapper"><div>He knows that eating it will make you wise, </div></div>
+				<div class="lineWrapper"><div>Of good and ill give you discerning sense,</div></div>
+				<div class="lineWrapper"><div>And raise you to a God-like excellence.’</div></div>
+
 				<div class="paragraphBreak"></div>
-				<div class="reference">Thus are they now to their created light,</div>
-				<div class="reference">Unto all truth and goodness opposite, _</div>
-				<div class="reference">Hating the peace and joy that reigns above,</div>
-				<div>Vainly contending to extinguish love,</div>
-				<div>Ruin God’s sacred empire, and destroy</div>
-				<div>That blessedness they never can enjoy.</div>
-				<div>A Chief they have, whose sovereign power and place</div>
-				<div>But adds to’s sin, his torture, and disgrace.</div>
+
+				<div class="lineWrapper"><div>Eve, quickly caught in the foul hunter’s net,</div></div>
+				<div class="lineWrapper"><div>Believed that death was only a vain threat.</div></div>
+				<div class="lineWrapper"><div>Her unbelief, quenching religious dread,</div></div>
+				<div class="lineWrapper"><div>Infectious counsel in her bosom bred,</div></div>
+				<div class="lineWrapper"><div>Dissatisfaction with her present state</div></div>
+				<div class="lineWrapper"><div>And fond ambition of a God-like height;</div></div>
+				<div class="lineWrapper"><div>Who now applies herself to its pursuit,</div></div>
+				<div class="lineWrapper"><div>With longing cyes looks on the lovely fruit,</div></div>
+				<div class="lineWrapper"><div>First nicely plucks, then eats with full delight,</div></div>
+				<div class="lineWrapper"><div>And gratifies her murderous appetite.</div></div>
+				<div class="lineWrapper"><div>Poisoned with the sweet relish of her sin</div></div>
+				<div class="lineWrapper"><div>Before her inward torturing pangs begin,</div></div>
+				<div class="lineWrapper"><div>The pleasure‘ to her husband she commends,</div></div>
+				<div class="lineWrapper"><div>And he by her persuasion too offends</div></div>
+				<div class="lineWrapper"><div>As by the serpent’s she before had done.</div></div>
+				<div class="lineWrapper"><div class="reference proverbs" onclick="getVerse('proverbs','1','10')" class="proverbs">Hence learn pernicious counsellors to shun.</div></div>
+
+				<div class="paragraphBreak"></div>
+
+				<div class="lineWrapper"><div>Within the snake the crafty tempter smiled</div></div>
+				<div class="lineWrapper"><div>To see mankind so easily beguiled;</div></div>
+				<div class="lineWrapper"><div>But laugh not, Satan: God shall thee deride.</div></div>
+				<div class="lineWrapper"><div>The son of God and man shall scourge thy pride,</div></div>
+				<div class="lineWrapper"><div class="reference john1" onclick="getVerse('1john','3','8')" class="john1">And in the time of vengeance shall exact</div></div>
+				<div class="lineWrapper"><div class="reference john" onclick="getVerse('john','16','11')" class="john">A punishment on thee for this accursed fact.</div></div>
+
+				<div class="paragraphBreak"></div>
+
+				<div class="lineWrapper"><div>Now wrought the poison on the guilty pair,</div></div>
+				<div class="lineWrapper"><div>Who with confusion on each other stare</div></div>
+				<div class="lineWrapper"><div>While death possession takes, and enters in</div></div>
+				<div class="lineWrapper"><div class="reference romans" onclick="getVerse('romans','5','12')" class="romans">At the wide breach laid open by their sin.</div></div>
+				<div class="lineWrapper"><div>Sound health and joy before th’intruder fled,</div></div>
+				<div class="lineWrapper"><div>Sickness and sorrow coming in their stead. 230</div></div>
+				<div class="lineWrapper"><div>Their late sweet calm did now forever cease,</div></div>
+				<div class="lineWrapper"><div>Storms in all quarters drove away their peace;</div></div>
+				<div class="lineWrapper"><div class="reference isaiah" onclick="getVerse('isaiah','48','22')" class="isaiah">Dread, guilt, remorse in the benighted soul</div></div>
+				<div class="lineWrapper"><div>Like raging billows on each other roll;</div></div>
+				<div class="lineWrapper"><div>Death’s harbingers” waste in each province make,</div></div>
+				<div class="lineWrapper"><div>While thundering terrors man’s whole island shake.</div></div>
+				<div class="lineWrapper"><div>Within, without, disordered in the storm,</div></div>
+				<div class="lineWrapper"><div>The colour fades and tremblings change the form,</div></div>
+				<div class="lineWrapper"><div>Heat melts their substance, cold their joints benumbs,</div></div>
+				<div class="lineWrapper"><div>Dull languishment their vigour overcomes.</div></div>
+				<div class="lineWrapper"><div>Grief-conquered beauty lays down all her arms,</div></div>
+				<div class="lineWrapper"><div class="reference psalms" onclick="getVerse('psalms','39','11')" class="psalms">And mightier woe dissolves her late-strong charms.</div></div>
+				<div class="lineWrapper"><div>Shame doth their looks deject, no cheerful grace,</div></div>
+				<div class="lineWrapper"><div>No pleasant smiles, appear in their sad face,</div></div>
+				<div class="lineWrapper"><div>They see themselves fooled, cheated, and betrayed,</div></div>
+				<div class="lineWrapper"><div>And naked in the view of heaven made.</div></div>
+				<div class="lineWrapper"><div>No glory compasses the drooping head,</div></div>
+				<div class="lineWrapper"><div>The sight of their own ugliness they dread,</div></div>
+				<div class="lineWrapper"><div>And curtains of broad, thin fig-leaves devise</div></div>
+				<div class="lineWrapper"><div>To hide themselves from their own weeping cyes;</div></div>
+				<div class="lineWrapper"><div>But ah! these coverings were too slight and thin</div></div>
+				<div class="lineWrapper"><div>To ward their shame off, or to keep out sin,</div></div>
+				<div class="lineWrapper"><div>Or the keen air’s quick-piercing shafts, which through</div></div>
+				<div class="lineWrapper"><div>Both leaves and pores into the bowels flew.</div></div>
+				<div class="lineWrapper"><div>While they remained in their pure innocence</div></div>
+				<div class="lineWrapper"><div>It was their robe of glory and defence;</div></div>
+				<div class="lineWrapper"><div>But when sin tore that mantle off, they found</div></div>
+				<div class="lineWrapper"><div>Their members were all naked, all uncrowned,</div></div>
+				<div class="lineWrapper"><div>Their purity.in every place defiled,</div></div>
+				<div class="lineWrapper"><div>Their vest of righteousness all torn and spoiled.</div></div>
+				<div class="lineWrapper"><div>Wherefore through guilt the late-loved light they shun,</div></div>
+				<div class="lineWrapper"><div class="reference psalms" onclick="getVerse('psalms','139','11')" class="psalms">And into the obscurest shadow run;</div></div>
+				<div class="lineWrapper"><div>But in no darkness can their quiet find,</div></div>
+				<div class="lineWrapper"><div>Carrying within them a disturbéd mind</div></div>
+				<div class="lineWrapper"><div>Which doth their cureless folly represent</div></div>
+				<div class="lineWrapper"><div>And makes them curse their late experiment,</div></div>
+				<div class="lineWrapper"><div>Wishing they had been pure and ignorant still,</div></div>
+				<div class="lineWrapper"><div>Nor coveted the knowledge of their ill.</div></div>
+				<div class="lineWrapper"><div>Ah, thus it is that yet we learn our good,</div></div>
+				<div class="lineWrapper"><div>Till it be lost but seldom understood,</div></div>
+				<div class="lineWrapper"><div>Rich blessings, while we have them, little prize</div></div>
+				<div class="lineWrapper"><div>Until their want their value magnifies,</div></div>
+				<div class="lineWrapper"><div>And equally doth our remorse increase</div></div>
+				<div class="lineWrapper"><div>For having cast away such happiness.</div></div>
+
+				<div class="paragraphBreak"></div>
+
+				<div class="lineWrapper"><div>O wretched man! who at so dear a rate</div></div>
+				<div class="lineWrapper"><div class="reference ecclesiastes" onclick="getVerse('ecclesiastes','1','18')">Purchased the knowledge of his own frail state,</div></div>
+				<div class="lineWrapper"><div>Knowledge of small advantage to the wise,</div></div>
+				<div class="lineWrapper"><div>Which only their affliction multiplies,</div></div>
+				<div class="lineWrapper"><div>While they in painful study vex their brain,</div></div>
+				<div class="lineWrapper"><div>Pursuing what they never can attain</div></div>
+				<div class="lineWrapper"><div>And what would not avail them if acquired,</div></div>
+				<div class="lineWrapper"><div>Till at the length, with fruitless labour tired,</div></div>
+				<div class="lineWrapper"><div>All that the learnéd and the wise can find</div></div>
+				<div class="lineWrapper"><div>Is but a vain disturbance of the mind,</div></div>
+				<div class="lineWrapper"><div>A sense of man’s inevitable woes,</div></div>
+				<div class="lineWrapper"><div>Which he but little feels who little knows.</div></div>
+				<div class="lineWrapper"><div>While mortals, holding on their error, still</div></div>
+				<div class="lineWrapper"><div class="reference proverbs" onclick="getVerse('proverbs','1','7')">Pursue the knowledge both of good and ill,</div></div>
+				<div class="lineWrapper"><div class="reference psalms" onclick="getVerse('psalms','111','10')">They neither of them perfectly attain</div></div>
+				<div class="lineWrapper"><div class="reference corinthians1" onclick="getVerse('1corinthians','1','20-21')">But in a dark tumultuous state remain;</div></div>
+				<div class="lineWrapper"><div class="reference james" onclick="getVerse('james','3','15-17')">Till sense of ill, increasing like night’s shade,</div></div>
+				<div class="lineWrapper"><div>Or hath a blot of good impressions made,</div></div>
+				<div class="lineWrapper"><div>Or good, victorious as the morning light,</div></div>
+				<div class="lineWrapper"><div>Triumphs over the vanquished opposite:</div></div>
+				<div class="lineWrapper"><div>For both at once abide not in one place,</div></div>
+				<div class="lineWrapper"><div>Good knowledge flies from them who ill embrace.</div></div>
+
+				<div class="paragraphBreak"></div>
+
+				<div class="lineWrapper"><div>So were our parents filled with guilt and fear</div></div>
+				<div class="lineWrapper"><div>When in the groves they God’s approaches hear,</div></div>
+				<div class="lineWrapper"><div>And from the terror of his presence fled;</div></div>
+				<div class="lineWrapper"><div>Whether their own convictions caused their dread,</div></div>
+				<div class="lineWrapper"><div>For inward guilt of conscience might suffice</div></div>
+				<div class="lineWrapper"><div>To chase vile sinners from his purer eyes;</div></div>
+				<div class="lineWrapper"><div>Or Nature felt an angry God’s descent,</div></div>
+				<div class="lineWrapper"><div>Which shook the earth, and tore the firmament;</div></div>
+				<div class="lineWrapper"><div>We are not told, nor will too far inquire.</div></div>
+				<div class="lineWrapper"><div>Lightnings and tempests might speak forth his ire;</div></div>
+				<div class="lineWrapper"><div>For at the day of universal doom</div></div>
+				<div class="lineWrapper"><div>The great Judge shall in flaming vengeance come,</div></div>
+				<div class="lineWrapper"><div>An all-consuming fire shall go before,</div></div>
+				<div class="lineWrapper"><div class="reference psalms" onclick="getVerse('psalms','97','3-4')">Whirlwinds and thunder shall about him roar,</div></div>
+				<div class="lineWrapper"><div class="reference isaiah" onclick="getVerse('isaiah','9','5')">Horror shall darken the whole troubled skies</div></div>
+				<div class="lineWrapper"><div class="reference thessalonians2" onclick="getVerse('2thessalonians','1','8')">And bloody veils shall hide the world’s bright eyes,</div></div>
+				<div class="lineWrapper"><div class="reference peter2" onclick="getVerse('2peter','3','12')">While stars from the dissolving heaven drop down</div></div>
+				<div class="lineWrapper"><div>And funeral blazes every turret crown.</div></div>
+				<div class="lineWrapper"><div class="reference revelations" onclick="getVerse('revelations','1','7')">The clouds shall be confounded with the waves,</div></div>
+				<div class="lineWrapper"><div class="reference joel" onclick="getVerse('joel','3','15-16')">The yawning earth shall open all her graves,</div></div>
+				<div class="lineWrapper"><div>Loud fragors!”! shall firm rocks in sunder rend,</div></div>
+				<div class="lineWrapper"><div class="reference matthew" onclick="getVerse('matthew','24','29')">Cleft mountains shall Hell’s fiery jaws distend,</div></div>
+				<div class="lineWrapper"><div>Vomiting cinders, sulphur, pitch, and flame,</div></div>
+				<div class="lineWrapper"><div>Which shall consume the world’s unjointed frame</div></div>
+				<div class="lineWrapper"><div>And turn the paradises we admire</div></div>
+				<div class="lineWrapper"><div class="reference revelations" onclick="getVerse('revelations','19','20')">Into an ever-boiling lake of fire.</div></div>
+
+				<div class="paragraphBreak"></div>
+
+				<div class="lineWrapper"><div>But God then in his rich grace did delay</div></div>
+				<div class="lineWrapper"><div>These dismal terrors till the last great day.</div></div>
+				<div class="lineWrapper"><div>Yet even his first approach created dread</div></div>
+				<div class="lineWrapper"><div>And the poor mortals from his anger fled</div></div>
+				<div class="lineWrapper"><div>Until a calmer voice their sense did greet.</div></div>
+				<div class="lineWrapper"><div class="reference hebrews" onclick="getVerse('hebrews','12','11')">Love even when it chides is kind and sweet.</div></div>
+				<div class="lineWrapper"><div>The sense of wrath far from the feared power drives,</div></div>
+				<div class="lineWrapper"><div class="reference psalms" onclick="getVerse('psalms','89','31-33')">The sense of love brings home the fugitives.</div></div>
+				<div class="lineWrapper"><div class="reference genesis" onclick="getVerse('genesis','4','14')">Souls flying God into despair next fall,</div></div>
+				<div class="lineWrapper"><div>Thence into hate, till black Hell close up all.</div></div>
+				<div class="lineWrapper"><div class="reference acts" onclick="getVerse('acts','9','')">But if sweet Mercy meet them on the way,</div></div>
+				<div class="lineWrapper"><div>That milder voice first doth their mad flight stay</div></div>
+				<div class="lineWrapper"><div class="reference psalms" onclick="getVerse('psalms','130','7')">And their ill-quitted hope again restore,</div></div>
+				<div class="lineWrapper"><div>Then Love that was forsaking them before</div></div>
+				<div class="lineWrapper"><div>Returns with a more flaming strong desire</div></div>
+				<div class="lineWrapper"><div>Of those sweet joys from which it did retire,</div></div>
+				<div class="lineWrapper"><div class="reference lamentations" onclick="getVerse('lamentations','3','1')">And in their’ absence woe and terror found,</div></div>
+				<div class="lineWrapper"><div>And all those plagues that cana poor soul wound.</div></div>
+				<div class="lineWrapper"><div>While‘ thus this love with holy ardour burns,</div></div>
+				<div class="lineWrapper"><div class="reference matthew" onclick="getVerse('matthew','27','46')">The bleeding sinner to his God returns</div></div>
+				<div class="lineWrapper"><div>And prostrate at his throne of grace doth lie,</div></div>
+				<div class="lineWrapper"><div class="reference job" onclick="getVerse('job','13','15')">If death he cannot shun, yet there to die</div></div>
+				<div class="lineWrapper"><div class="reference hosea" onclick="getVerse('hosea','6','1-3')">Where Mercy still doth fainting souls revive</div></div>
+				<div class="lineWrapper"><div>And in its kind embraces keep alive</div></div>
+				<div class="lineWrapper"><div>A gentler fire than what it lately felt</div></div>
+				<div class="lineWrapper"><div>Under the sense of wrath. The soul doth melt</div></div>
+				<div class="lineWrapper"><div>Like precious ore, which when men would refine</div></div>
+				<div class="lineWrapper"><div>Doth in its liquefaction brightly shine;</div></div>
+				<div class="lineWrapper"><div>In cleansing penitential meltings so</div></div>
+				<div class="lineWrapper"><div>Foul sinners once again illustrious grow,</div></div>
+				<div class="lineWrapper"><div class="reference malachi" onclick="getVerse('malachi','3','2-3')">When Christ’s all-heating, softening spirit hath</div></div>
+				<div class="lineWrapper"><div class="reference revelations" onclick="getVerse('revelations','1','5')">Their furnace been, and his pure blood their bath.</div></div>
+				<div class="lineWrapper"><div>Now though God’s wrath bring not the sinner home,</div></div>
+				<div class="lineWrapper"><div>Who only by sweet love attracted come,</div></div>
+				<div class="lineWrapper"><div class="reference romans" onclick="getVerse('romans','12','1')">Yet is it necessary that the sense</div></div>
+				<div class="lineWrapper"><div class="reference john" onclick="getVerse('john','16','9-10')">Of it should make us know the excellence</div></div>
+				<div class="lineWrapper"><div class="reference matthew" onclick="getVerse('matthew','11','28')">And taste the pleasantness of pardoning grace,</div></div>
+				<div class="lineWrapper"><div>That we may it with fuller joy embrace;</div></div>
+				<div class="lineWrapper"><div class="reference luke" onclick="getVerse('luke','7','47')">Which, when it brings a frighted wretch from Hell,</div></div>
+				<div class="lineWrapper"><div class="reference john1" onclick="getVerse('1john','4','10')">Makes it love more than those who never fell:</div></div>
+				<div class="lineWrapper"><div>But mankind’s love to God grows by degrees</div></div>
+				<div class="lineWrapper"><div>As he more clearly God’s sweet mercy sees,</div></div>
+				<div class="lineWrapper"><div>And God at first reveals not all his grace,</div></div>
+				<div class="lineWrapper"><div>That men more ardently may seek his face,</div></div>
+				<div class="lineWrapper"><div>Averted by their folly and their pride,</div></div>
+				<div class="lineWrapper"><div>Which makes them their confounded faces hide.</div></div>
+				<div class="lineWrapper"><div class="reference lamentations" onclick="getVerse('lamentations','3','22-23')">As still the Sun’s the same behind the clouds,</div></div>
+				<div class="lineWrapper"><div>Such is God’s love, which his kind anger shrouds,</div></div>
+				<div class="lineWrapper"><div>Which doth not all at once itself reveal</div></div>
+				<div class="lineWrapper"><div>But first in the thick shadows that conceal</div></div>
+				<div class="lineWrapper"><div>Its glory doth attenuation cause;</div></div>
+				<div class="lineWrapper"><div class="reference lamentations" onclick="getVerse('lamentations','3','26')">Then the black, dismal curtain softly draws</div></div>
+				<div class="lineWrapper"><div>And lets some glimmering light of hope appear,</div></div>
+				<div class="lineWrapper"><div class="reference hosea" onclick="getVerse('hosea','2','15')">Which rather is a lessening of our fear</div></div>
+				<div class="lineWrapper"><div>Than an assurance of our joy and peace,</div></div>
+				<div class="lineWrapper"><div>truce with misery, rather than release.</div></div>
+
+				<div class="paragraphBreak"></div>
+
+				<div class="lineWrapper"><div>Thus had not God come in, mankind had died</div></div>
+				<div class="lineWrapper"><div>Without repair; yet came he first to chide,</div></div>
+				<div class="lineWrapper"><div>To urge their sin, with its sad consequence,</div></div>
+				<div class="lineWrapper"><div>And make them feel the weight of their offence,</div></div>
+				<div class="lineWrapper"><div>To’examine and arraign them at his bar</div></div>
+				<div class="lineWrapper"><div>And show them what vile criminals they were.</div></div>
+				<div class="lineWrapper"><div>But ah! our utterance here is choked with woe,</div></div>
+				<div class="lineWrapper"><div>With tardy steps from Paradise we go.</div></div>
+				<div class="lineWrapper"><div>Then let us pause on our lost joys a while</div></div>
+				<div class="lineWrapper"><div>Before we enter on our sad exile.</div></div>
 
 			</div>
 		</div>
 
-		<div id="contentRight">
-			<div class="spacer">
-			</div>
-			<div id="titleRight">
-				<h1>Reference</h1>
-
-			</div>
-			<div id="bibleBox">
-				<div>Click a line in <i>Order and Disorder</i> to see what Biblical passage it is referencing.</div>
+		<div id="referencePage">
+			<div id="referencePageContent">
 			</div>
 		</div>
 	</div>
+
+	<div id="searchPage">
+		<div id="searchPageHeader">
+			<p>Tools</p>
+		</div>
+		<div id="searchPageContent">
+			<div class="generalSearchContainer">
+				<p><b>Search by books of the Bible:</b></p>
+					<select name="books" id="books" onchange="bookSearch()">
+						<option value="genesis">Genesis</option>
+						<option value="joshua">Joshua</option>
+						<option value="job">Job</option>
+						<option value="psalms">Psalms</option>
+						<option value="proverbs">Proverbs</option>
+						<option value="ecclesiastes">Ecclesiastes</option>
+						<option value="isaiah">Isaiah</option>
+						<option value="jeremiah">Jeremiah</option>
+						<option value="lamentations">Lamentations</option>
+						<option value="hosea">Hosea</option>
+						<option value="joel">Joel</option>
+						<option value="habakkuk">Habakkuk</option>
+						<option value="malachi">Malachi</option>
+						<option value="matthew">Matthew</option>
+						<option value="mark">Mark</option>
+						<option value="luke">Luke</option>
+						<option value="john">John</option>
+						<option value="acts">Acts</option>
+						<option value="romans">Romans</option>
+						<option value="corinthians1">1 Corinthians</option>
+						<option value="ephesians">Ephesians</option>
+						<option value="colossians">Colossians</option>
+						<option value="thessalonians2">2 Thessalonians</option>
+						<option value="timothy2">2 Timothy</option>
+						<option value="hebrews">Hebrews</option>
+						<option value="james">James </option>
+						<option value="peter1">1 Peter</option>
+						<option value="peter2">2 Peter</option>
+						<option value="john1">1 John</option>
+						<option value="jude">Jude</option>
+						<option value="revelations">Revelations</option>
+					</select>
+				<p id="bookCount">Count: </p>
+
+				<p id="bookLineNumbers">Line Numbers: </p>
+
+			</div>
+
+		</div>
 	</div>
+
+	</div>
+
 </body>
 
 

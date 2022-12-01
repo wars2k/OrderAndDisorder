@@ -3,8 +3,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	color: #2E3440;
-	font-family: arial;
+
+	font-family: "georgia";
 }
 html {
 	height: 100%;
@@ -13,7 +13,7 @@ html {
 body {
 	height: 100vh;
 	width: 100vw;
-	background-color: #ECEFF4;
+	background-color: #ededed;
 	display: flex;
 	
 	overflow: auto;
@@ -24,110 +24,161 @@ body {
 #header {
 	width: 100%;
 	height: 50px;
-	background-color: #4C566A;
-
+	background-color: #e5e5e5;
 
 }
 
-#sidebar {
-	width: 200px !important;
-
-	background-color: #E5E9F0;
-	border-right: 3px solid #D8DEE9;
-}
-#mainContent {
-	flex-grow: 1;
-	
-	display: flex;
-}
-
-#mainContent1 {
+#menuHeader {
+	height: 75px;
 	width: 100%;
+	background-color: #e5e5e5;
+	border-top: 3px solid #d7d7d7;
+	border-bottom: 3px solid #d7d7d7;
+
 	display: flex;
-	flex: 1;
-	
-	overflow: hidden;
+	flex-direction: flex-start;
+	align-items: center;
+	padding-left: 30px;
 }
 
-#contentLeft, #contentRight{
-	width: 50%;
-	height: 100%;
+#mainContent {
+	flex: 1;
+	width: 100%;
+	border: ;
+	overflow: auto;
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 10px;
+
+}
+
+#cantoPage, #referencePage {
+	width: 40%;
 	
+	border: 1px solid #eceff9;
+	background-color: #fdfdfd;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	padding-left: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-right: 15px;
 	display: flex;
 	justify-content: center;
-	align-items: top;
-	overflow: hidden;
-	flex-wrap: wrap;
-
-}
-
-#cantoBox, #bibleBox {
-	width: 75%;
-	height: 75%;
-	border: 5px solid #D8DEE9;
-	font-size: 16pt;
+	box-shadow: 3px 3px 3px 3px #ccc;
 	overflow-y: scroll;
-	padding: 5px;
-	background-color: #E5E9F0;
-
+	margin-bottom: 30px;
 }
 
-#contentLeft {
-	border-right: 2px solid #D8DEE9;
-}
-#contentRight {
-	border-left: 2px solid #D8DEE9;
-}
-
-#header h1, #header i {
-	color: #E5E9F0;
-	font-size: 24pt;
-	padding-top: 5px;
-	padding-left: 5px;
-}
-#sidebar {
+#cantoPageContent, #referencePageContent {
+	width: 490px;
 	font-size: 14pt;
-	padding-left: 10px;
-	padding-top: 20px;
-	line-height: 1.5;
-}
-#cantoBox div {
-	
+	border: ;
+
 }
 
-#cantoBox div:hover {
-	background-color: #D8DEE9;
+select, button, input{
+  border:none;
+  padding: 10px 20px;
+  border-radius:5px;
+  height: 40px;
+  margin-right: 20px;
+  background-color: #fdfdfd;
 }
 
-#cantoBox::-webkit-scrollbar, #bibleBox::-webkit-scrollbar {
-	display: none;
+select:focus{
+  outline:none;
 }
-.paragraphBreak {
-	height: 10px;
-}
-.reference {
-	color: #5E81AC;
-}
-.reference:hover {
+button:hover {
 	cursor: pointer;
 }
 
-#titleLeft, #titleRight {
-	padding-top: ;
-	width: 75%;
-	border:  ;
-	height: 20px;
-	font-size: 16pt;
-	border: ;
+#cantoPageContent div:hover, .permanentHighlight {
+	background-color: #fdfca3;
+
 }
-.spacer {
-	height: 30px;
-	border: ;
+
+.lineWrapper {
+	display: flex;
+	justify-content: flex-start;
+}
+.lineNumber {
+	padding-right: 10px;
+	display: inline;
+	font-family: "courier new";
+	font-size: 12pt;
+
+}
+
+
+.reference {
+	/*background-color: #fefdd1;*/
+	text-decoration-line: underline;
+	text-decoration-style: dashed;
+	text-decoration-thickness: 2px;
+	text-decoration-color: gray;
+}
+.reference:hover {
+	cursor: pointer;
+
+}
+.paragraphBreak {
+	height: 40px;
+}
+.paragraphBreak:hover, #cantoTitle:hover {
+	background-color: #fdfdfd !important;
+}
+
+#cantoTitle {
+	padding-bottom: 15px;
+}
+
+#searchPage {
+	display: none;
+	position: absolute;
+	width: 600px;
+	height: 400px;
+	
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+	background-color: #f2f2f2;
+	box-shadow: 3px 3px 3px 3px #ccc;
+	padding: ;
+}
+#searchPageHeader {
 	width: 100%;
+	height: 30px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: #ededed;
+	border-bottom: 3px solid #e0e0e0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	font-weight: bold;
 }
-.exactReference {
-	color: #5E81AC;
+
+.generalSearchContainer {
+	padding: 15px;
 }
-.permanentHighlight {
-	background-color: #D8DEE9;
+.generalSearchContainer p {
+	padding-bottom: 3px;
+	padding-top: 2px;
+}
+
+#books {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#title {
+	padding-top: 10px;
+	padding-left: 15px;
+	font-family: "garamond";
+	color: #2a2a2a;
+}
+#title i {
+	color: black;
+	font-family: "garamond";
 }
