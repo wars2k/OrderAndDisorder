@@ -158,5 +158,5 @@ function bookSearch() {
 }
 
 function openGithub() {
-	window.open("https://github.com/wars2k/orderanddisorder/tree/redesign");
+	window.open("https://github.com/wars2k/orderanddisorder");
 }
